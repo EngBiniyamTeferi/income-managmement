@@ -15,7 +15,7 @@ function exportToExcel() {
     });
 
     allReasons.forEach(element => {
-reasonsList.push(Number(element.value) || "");
+reasonsList.push(element.value || "");
     })
 
     let excelIncome ={ "Total Income": inputs.Income.value }
@@ -33,13 +33,13 @@ const data = [
         expense = expensesList[i]
         data.push({ 
 
- "Reason": reason,
+ "Reason": String(reason),
     "Expense": expense
         })
     }
 
     data.push({
-        "remaining": remaining
+        "remaining": remaining.value
     })
 
 
