@@ -1,4 +1,3 @@
-
 document.getElementById("downloadBtn").addEventListener("click", () => {
   exportToExcel();
 });
@@ -6,16 +5,12 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
 function exportToExcel() {
     const expensesList = []
   const reasonsList = []
-  // 2. Store inputs
   const inputs = { Income };
-// const inputs = [TotalIncome, totalExpense, remaining_money]
-  // 3. Fake calculation (replace with real)
 
 
   let allExpenses = expenses.querySelectorAll("input[type='number']")
   let allReasons = expenses.querySelectorAll("input[type='text']")
     allExpenses.forEach(element => {
-        // as the data comes out as a string it has to be changed to a Number
         expensesList.push(Number(element.value) || 0);
     });
 
@@ -47,18 +42,12 @@ const data = [
         "remaining": remaining
     })
 
-  // 4. Build JSON
-  
 
-  // 5. Convert to sheet
   const worksheet = XLSX.utils.json_to_sheet(data);
 
-  // 6. Create workbook
   const workbook = XLSX.utils.book_new();
 
-  // 7. Add sheet
   XLSX.utils.book_append_sheet(workbook, worksheet, "Income Manager");
 
-  // 8. Download file
   XLSX.writeFile(workbook, "Income Manager.xlsx");
 }
