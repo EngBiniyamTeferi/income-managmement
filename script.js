@@ -3,6 +3,8 @@ let expenses = document.getElementById("expenses")
 let Total_income = document.getElementById("Total_income")
 let total_expense = document.getElementById("total_expense")
 let remaining = document.getElementById("remaining")
+
+// naming each data with 0 to recalculate everything on input
 let totalExpense = 0;
 let TotalIncome = 0
 let remaining_money = 0
@@ -60,6 +62,7 @@ TotalIncome = Income.value
 Total_income.innerHTML= `Total Income: ${TotalIncome.toLocaleString()}`
 total_expense.innerHTML= `Total Expense: ${totalExpense.toLocaleString()}`
 remaining.innerHTML= `Remaining Budget: ${remaining_money.toLocaleString()}`
+
 
 // it erases the value when recalled
 totalExpense = 0
